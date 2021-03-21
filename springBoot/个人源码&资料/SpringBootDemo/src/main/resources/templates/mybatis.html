@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mybatis</title>
+</head>
+<body>
+<h1>This is a html</h1>
+<ul th:each="AmUsers,userStat:${AmUsers}">
+    <li>当前遍历的次数: <span th:text="${userStat.count}"/> 当前遍历的索引: <span th:text="${userStat.index}"/> 当前遍历是否是奇数行: <span th:text="${userStat.odd}"/> 当前遍历是否是偶数行: <span th:text="${userStat.even}"/> </li>
+    <li><span th:text="${AmUsers.userId}"/></li>
+    <li><span th:text="${AmUsers.userOpenId}"/></li>
+    <li><span th:text="${AmUsers.userMobile}"/></li>
+    <li><span th:text="${AmUsers.userNo}"/></li>
+    <li><span th:text="${AmUsers.userName}"/></li>
+    <li><span th:text="${AmUsers.userPhoto}"/></li>
+    <li><span th:text="${AmUsers.userTypeId}"/></li>
+    <li><span th:text="${AmUsers.userFocusStateId}"/></li>
+    <li><span th:text="${AmUsers.accountId}"/></li>
+    <li>集合中总记录数:<span th:text="${userStat.size}"/></li>
+</ul>
+</body>
+</html>

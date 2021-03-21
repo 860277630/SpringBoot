@@ -1,0 +1,49 @@
+server:
+  servlet:
+          context-path: /springboot #指定当前应用在部署到内嵌容器中项目名
+spring:
+  #指定加载哪个配置文件
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: 123888
+    driver-class-name: com.mysql.jdbc.Driver
+  #懒加载
+  main:
+    lazy-initialization: false
+  #页面路径
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+    cache: false
+    #可以利用@符来调用静态资源
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/
+  servlet:
+    multipart:
+      max-file-size: 500MB    #客户端上传最大文件
+      max-request-size: 500MB   #服务端最大文件
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.model
+
+#idea配置文件默认不允许有中文注释
+logging:
+  level:
+    com.example.demo.dao: debug
+
+
+name: xiaochen
+bir: 2012/12/12 12:12:12
+strs: aa,bb,cc
+qqs: xiaochen,xiaohei,xiaoming
+maps: {'aa':'xiaochen','bb':'xiaohei','cc':'xiaosan'}
+Student:
+  age: 21
+  grades: class4
+

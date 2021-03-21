@@ -1,0 +1,49 @@
+server:
+  servlet:
+          context-path: /springboot #ָ����ǰӦ���ڲ�����Ƕ��������Ŀ��
+spring:
+  #ָ�������ĸ������ļ�
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: 123888
+    driver-class-name: com.mysql.jdbc.Driver
+  #������
+  main:
+    lazy-initialization: false
+  #ҳ��·��
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+    cache: false
+    #��������@�������þ�̬��Դ
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/
+  servlet:
+    multipart:
+      max-file-size: 500MB    #�ͻ����ϴ�����ļ�
+      max-request-size: 500MB   #���������ļ�
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.demo.model
+
+#idea�����ļ�Ĭ�ϲ�����������ע��
+logging:
+  level:
+    com.example.demo.dao: debug
+
+
+name: xiaochen
+bir: 2012/12/12 12:12:12
+strs: aa,bb,cc
+qqs: xiaochen,xiaohei,xiaoming
+maps: {'aa':'xiaochen','bb':'xiaohei','cc':'xiaosan'}
+Student:
+  age: 21
+  grades: class4
+

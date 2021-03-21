@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/springboot/loginto" method="post">
+    <p> name : <input type="text" name="name" /></p>
+    <p> PWD : <input type="text" name="pwd" /></p>
+    <p>验证码：<img id = "num" th:src="@{/getCode}"/><input type="text" name="code" /> <a href = "javascript:void (0);" onclick="document.getElementById('num').src = '/springboot/getCode?'+(new Date).getTime()">换一张</a></p>
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
